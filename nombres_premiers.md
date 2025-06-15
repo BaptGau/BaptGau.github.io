@@ -2,12 +2,7 @@
 layout: default
 title: Peut-on battre Riemann ?
 ---
-
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-
+<div id="mathjax-container">
 ### Introduction
 "Un nombre entier plus grand que 1 n'ayant que deux diviseurs distincts: 1 et lui-même."
 
@@ -108,3 +103,4 @@ Dans les deux cas, le taux de couverture est de 100% - notre hypothèse semble �
 Evidemment, ce n'est pas pertinent de parler de "battre" Riemann. D'abord, Riemann n'a pas travaillé en détail sur le sujet de l'estimation de l'incertitude. Il n'avait besoin dans ses travaux que l'approximation du logarithme intégrale. Son estimation découle de son hypothèse, concernant la fameuse fonction $\zeta$. Plus encore contrairement à Riemann, le résultat présenté n'a aucune garantie asymptotique: il se peut que pour un certain $x$ très grand, mon hypothèse ne tienne plus. Alors, l'estimation deviendra invalide.
 
 L'intérêt de ce travail est cependant de montrer qu'il est possible d'utiliser les méthodes d'analyse de données, afin d'analyser la répartition des nombres premiers. Evidemment, la méthode présentée se base sur une heuristique simple, cependant, bien des raffinements sont possibles pour l'améliorer. Je laisse au lecteur ambitieux, le soin de reprendre le flambeau !
+</div>
