@@ -28,7 +28,7 @@ Fruit de l'intuition des uns et des découvertes des autres, notre compréhensio
 
 Pourtant certains mystères demeurent sur ces objets d'apparence si simple. Parmi-eux, se trouve la conjecture de Legendre: "Il existe toujours au moins un nombre premier entre $2n$ et $(n+1)^2$". Ou encore, la célèbre conjecture de Goldbach: "Tout nombre pair strictement supérieur à 2 peut s'écrire comme la somme de deux nombre premiers". 
 
-Je laisse au lecteur studieux le soin de chercher à démontrer ces conjectures (si tant est qu'elles soient démontrables), et je propose aux autres de pencher non sur les propriétés de ces nombres, mais sur leur répartition. 
+Je laisse au lecteur studieux le soin de chercher à démontrer ces conjectures (si tant est qu'elles soient démontrables), et je propose aux autres de nous pencher non sur les propriétés de ces nombres, mais sur leur répartition. 
 
 En effet, <b>comment</b> évoluent les nombres premiers ? Concrètement, si je prends les 10 premiers nombres entiers, combien sont-ils premiers ? Et pour les 100 premiers ? Et quid des 1000 premiers ? En bref, comment évolue la proportion des nombres premiers parmi l'ensemble des nombres entiers. Et peut-on en estimer la variation ?
 
@@ -71,7 +71,7 @@ Le lecteur curieux sera peut être heureux d'apprendre que j'ai essayé plusieur
 #### L'incertitude sous l'hypothèse de Riemann
 Il n'aura pas échappé au lecteur avisé que le logarithme intégral, s'il est un bon prédicteur du nombre de nombre premiers inférieur à une certaine borne, n'en décrit toutefois pas le comportement exact. De fait, les premiers graphiques nous montraient toujours une différence entre la prévision du logarithme intégral et la réalité.
 
-<b>Peut-on quantifier cette erreur ?</b> Un peu de terminologie dans un premier temps. On définit l'erreur comme la différence entre la prévision du logarithme intégral et la réalité. Autrement dit:
+<b>Peut-on quantifier cette erreur ?</b> Et si oui de quelle façon ? Commençons par un peu de terminologie. On définit l'erreur comme la différence entre la prévision du logarithme intégral et la réalité. Autrement dit:
 
 $e_x = Li(x) - \pi(x)$
 
@@ -79,7 +79,7 @@ Notons que l'estimation du logarithme intégrale est toujours supérieure à la 
 
 $e_x = \|Li(x) - \pi(x)\|$.
 
-La question qui survient alors est la suivante: Pouvons-nous établir un <b>intervalle d'incertitude</b>, c'est-à-dire un intervalle pour lequel nous sommes certains que la vraie valeur du nombre de primaux sera compris dedans ?
+La question qui survient alors est la suivante: Pouvons-nous établir un <b>intervalle d'incertitude</b>, c'est-à-dire un intervalle pour lequel nous sommes certains que la vraie valeur du nombre de primaux inférieur à la borne étudiée sera compris dedans ?
 
 La technique la plus simple est de supposer une <b>erreur symétrique</b>, définie selon un certain paramètre $\alpha$. L'intervalle d'incertitude est alors simplement le logarithme intégral +/- ce coefficient. Formellement, on veut trouver $\alpha$ tel que:
 
@@ -88,9 +88,9 @@ $Li(x) - \alpha \leq \pi(x) \leq Li(x) + \alpha$
 Ce qui revient à dire qu'on veut un intervalle, pour lequel la <b>probabilité d'obtenir la valeur de $\pi(x)$ à l'intérieur de ce dernier est de 1</b>. Soit:
 $\mathbb{P}\left[\pi(x) \in \mathbb{C}(x, \alpha)\right] = 1$
 
-$avec \space \mathbb{C}(x, \alpha) = \{Li(x) - \alpha,\ Li(x) + \alpha\}$
+$avec \space \mathbb{C}(x, \alpha) = \(Li(x) - \alpha,\ Li(x) + \alpha\)$
 
-Le lecteur mathématicien sait peut-être que Riemann à travaillé sur le sujet des nombres premiers. L'une des conséquences de sa célèbre hypothèse éponyme à savoir que "tous les zeros non triviaux de la fonction Zeta se situent sur la droite critique" concerne précisément la répartiton des nombre premiers. 
+Le lecteur féru de mathématiques sait peut-être que <b>Riemann</b> à travaillé sur le sujet des nombres premiers. L'une des conséquences de sa célèbre hypothèse éponyme à savoir que "tous les zeros non triviaux de la fonction Zeta se situent sur la droite critique" concerne précisément la répartiton des nombre premiers. 
 
 Riemann nous dit que le terme d'erreur ($\alpha$) que nous cherchons est défini par $\sqrt(x)log(x)$. Plus précisément <b>si l'hypothèse de Riemann est vraie</b>, alors:
 
@@ -107,13 +107,13 @@ $\mathbb{C}(x, \alpha_{RH}) = \{Li(x) - \alpha_{RH},\ Li(x) + \alpha_{RH}\}$
 
 $\leftrightarrow \mathbb{C}(x, \alpha_{RH}) = \{Li(x) - \sqrt(x)+log(x),\ Li(x) +  \sqrt(x)+log(x)\}$
 
-Ma proposition est la suivante: <b>est-il possible de proposer un coefficient d'incertitude $\alpha_{star}$ qui soit meilleur, que celui de Riemann ?</b> C'est en ce sens que nous voulons "battre" Riemann.
+La question est la suivante: <b>est-il possible de proposer un coefficient d'incertitude $\alpha_{star}$ qui soit meilleur, que celui de Riemann ?</b> C'est en ce sens que nous voulons "battre" Riemann.
 
 #### Vers un nouveau coefficient d'incertitude
 Définissons d'abord ce qui est entendu par un "meilleur" coefficient d'incertitude. Le coefficient doit respecter deux conditions:
-- La <b>validité, c'est-à-dire que l'ensemble des valeurs de $\pi(x)$ doivent être comprises dans l'intervalle $\mathbb{C}(x, \alpha_{star})$</b> pour un coefficient candidat $\alpha_{star}$ et une borne $x$ donnée. Notons au passage que $\alpha_{RH}$ est un coefficient valide car, sur le graphique précédent, l'ensemble des valeurs de $\pi(x)$ sont comprises à l'intérieur de l'intervalle de prévision. La validité se formalise ainsi: $\mathbb{P}\left[\pi(x) \in \mathbb{C}(x, \alpha)\right] = 1$. 
+- La <b>validité, c'est-à-dire que l'ensemble des valeurs de $\pi(x)$ doivent être comprises dans l'intervalle $\mathbb{C}(x, \alpha_{star})$</b>, pour un coefficient candidat $\alpha_{star}$ et une borne $x$ donnée. Notons au passage que $\alpha_{RH}$ est un coefficient valide car, sur le graphique précédent, l'ensemble des valeurs de $\pi(x)$ sont comprises à l'intérieur de l'intervalle de prévision. La validité se formalise ainsi: $\mathbb{P}\left[\pi(x) \in \mathbb{C}(x, \alpha)\right] = 1$. 
 
-- L'<b>efficacité, c'est-à-dire proposer l'intervalle le plus petit possible</b>. Dans notre cas, cela se traduit par avoir un coefficient $\alpha_{star}$ qui soit le plus petit possible (en sorte que la différence entre la borne supérieure $Li(x) + \alpha_{star}$ et la borne inférieure $Li(x) - \alpha$ soit la plus petite possible). A ce sujet, on remarque que le coefficient d'incertitude proposé par Riemann semble très large, et donc, n'est peut-être pas le plus efficace.
+- L'<b>efficacité, c'est-à-dire proposer l'intervalle le plus petit possible</b>. Dans notre cas, cela se traduit par avoir un coefficient $\alpha_{star}$ qui soit le plus petit possible (en sorte que la différence entre la borne supérieure $Li(x) + \alpha_{star}$ et la borne inférieure $Li(x) - \alpha_{star}$ soit la plus petite possible). A ce sujet, on remarque que le coefficient d'incertitude proposé par Riemann semble très large, et donc, n'est peut-être pas le plus efficace.
 
 Evidemment, le lecteur perspicace aura remarqué que <b>ces deux conditions jouent l'une contre l'autre</b>. En effet, si l'on ne veut un coefficient qui ne soit qu'efficace, alors le meilleur coefficient d'incertitude est 0. 
 
@@ -122,14 +122,14 @@ A l'inverse, si l'on ne veut un coefficient qui ne soit que valide, un coefficie
 Alors comment procéder ? Considérons ici les erreurs de prévision, les $\epsilon_x$ mentionnés plus haut. Observons comment cette erreur varie lorsque l'on fait varier $x$:
 <img src="riemann_hypothesis_plots/errors.svg" alt="errors" width="1000"/>
 
-Le second graphique nous informe sur quelque chose de très intéressant. J'invite le lecteur à regarder les axes. Alors que la borne maximum augmente jusqu'à 500 000, l'erreur maximum observée n'est elle que de 100. 
+Le second graphique nous informe de quelque chose de très intéressant. J'invite le lecteur à regarder les axes. Alors que la borne maximum augmente jusqu'à 500 000, l'erreur maximum observée n'est elle que de 100. 
 
 Il semblerait que si l'on rapporte l'erreur à la borne observée, <b>l'erreur relative que l'on obtient diminue progressivement lorsque la borne considérée augmente</b>. Voyons plutôt:
 <img src="riemann_hypothesis_plots/errors_percentage.svg" alt="error_percentage" width="1000"/>
 
-Ce que le second graphique nous dit, c'est que <b>plus l'on observe une borne élevée, plus l'erreur de prévision relative commise par la fonction logarithme intégrale diminue</b>. 
+Ce que le second graphique nous dit, c'est que <b>plus l'on observe une borne élevée, plus l'erreur de prévision relative commise par la fonction logarithme intégrale diminue</b>.
 
-Plus encore, plus la volatilité (c'est à dire le spectre de valeurs prises par cette erreur relative) diminue également. Je soupçonne que cette observation soit dû au phénomène de raréfaction mentionné plus haut. Pour en avoir le coeur net, regardons la moyenne et la volatilité mobile de l'erreur relative.
+Plus encore, plus la volatilité (c'est à dire le spectre de valeurs prises par cette erreur relative) diminue également. Regardons, pour nous en assurer, la moyenne et la volatilité mobile de l'erreur relative.
 <img src="riemann_hypothesis_plots/delta.svg" alt="delt" width="1000"/>
 
 <b>Posons l'hypothèse que cette observation est valable</b>, et persistera quelle que soit la borne. Autrement dit, admettons:
@@ -139,27 +139,27 @@ Fort de ces analyses, le lecteur habile pourrait alors estimer $\alpha_{star}$ d
 
 Nous proposons l'approche naive suivante. <b>Fixons un seuil arbitraire</b> à partir des erreurs relatives des premières valeurs de $x$. Si l'hypothèse est vraie, alors <b>toutes les erreurs futures se situeront en dessous de ce seuil</b>. 
 
-Fixons ce seuil $\alpha_{star}$ à 0.015% par exemple. Notons $x_{\alpha_{star}}$ la borne pour lequel l'erreur relative moyenne passe le seuil $\alpha_{star}$. On obtient:
+Fixons ce seuil $\alpha_{star}$ à 0.015% par exemple. Notons $x_{star}$ la borne pour lequel l'erreur relative moyenne passe le seuil $\alpha_{star}$. On obtient:
 <img src="riemann_hypothesis_plots/alpha_star.svg" alt="alpha_star" width="1000"/>
 
 Si notre hypothèse est valable, cela signifie que $Li(x) - \alpha_{star}.Li(x) \le \pi(x) \le Li(x) + \alpha_{star}.Li(x)$
-$\forall x > x_{\alpha_{star}}$
+$\forall x > x_{star}$
 
-Autrement dit, tout nombre supérieur au nombre $x_{\alpha_{star}}$, sera compris dans notre intervalle de prévision. L'intervalle est donc valide !
+Autrement dit, tout nombre supérieur au nombre $x_{star}$, sera compris dans notre intervalle de prévision. L'intervalle est donc valide !
 
-Nous avons donc un nouveau seuil $\alpha_{star}$ pour "défier" celui de Riemann $\alpha_{RH}$. Reste à savoir s'il est plus efficace (autrement dit, "moins large"). Pour ce faire nous pouvons utiliser le crible d'Eratosthène pour estimer $\pi(x)$ pour $x$ allant jusqu'a 5 millions. 
+Nous avons donc un nouveau seuil $\alpha_{star}$ pour "défier" celui de Riemann $\alpha_{RH}$. Reste à savoir s'il est plus efficace (autrement dit, "moins large"). Pour ce faire nous pouvons utiliser le crible d'Eratosthène pour estimer $\pi(x)$ pour $x$ allant jusqu'a 5 millions (5 millions étant la limite que mon ordinateur peut générer dans un temps acceptable). 
 
-Cela nous permet de comparer les deux méthodes d'estimation de l'incertitude et également de nous assurer que les hypothèses posées sur un échantillon sont valables pour un autre échantillon plus grand. Voyons plutôt:
+Cela nous permet de comparer les deux méthodes d'estimation de l'incertitude et également de nous assurer conjectures posées se généralisent bien. Voyons plutôt:
 <img src="riemann_hypothesis_plots/forecast_comparison.svg" alt="forecasts" width="1000"/>
-Dans les deux cas, <b>le taux de couverture est de 100%</b> - notre hypothèse semble être vérifiée. Par ailleurs, le lecteur peut observer que l'intervalle calculé via $\alpha_{star}$ est plus <b>efficicace</b> que celui basé sur l'hypothèse de Riemann. Nous avons donc en un sens "battu" Riemann dans l'estimation de l'erreur de prévision sur la répartition des nombres premiers sous une borne donée !
+Dans les deux cas, <b>le taux de couverture est de 100%</b> - notre hypothèse semble être vérifiée. Par ailleurs, le lecteur peut observer que l'intervalle calculé via $\alpha_{star}$ est plus <b>efficicace</b> que celui basé sur l'hypothèse de Riemann - l'intervalle est bien moins grand. Nous avons donc en un sens "battu" Riemann dans l'estimation de l'erreur de prévision sur la répartition des nombres premiers !
 
 ### Conclusion
 Evidemment, ce n'est pas pertinent de parler de "battre" Riemann. 
 
-D'abord, Riemann n'a pas travaillé en détail sur le sujet de l'estimation de l'incertitude. Il n'avait besoin dans ses travaux que l'approximation du logarithme intégrale. Son estimation découle de son hypothèse, concernant la fameuse fonction $\zeta$. 
+D'abord, Riemann n'a pas travaillé en détail sur le sujet de l'estimation de l'incertitude. Il n'avait besoin dans ses travaux que de l'approximation du logarithme intégrale. Son estimation découle de son hypothèse, concernant la fonction $\zeta$. 
 
 Plus encore contrairement à Riemann, le résultat présenté n'a aucune garantie asymptotique: il se peut que pour un certain $x$ très grand, l'hypothèse ne tienne plus. Alors, l'estimation deviendra invalide.
 
-L'intérêt de ce travail est cependant de montrer qu'il est possible d'utiliser les méthodes modernes d'analyse de données, afin d'analyser la répartition des nombres premiers, et éventuellement de préciser leur estimation. 
+L'intérêt de ce travail est cependant de montrer qu'il est possible d'utiliser les méthodes modernes d'analyse de données, afin d'estimer la répartition des nombres premiers, et éventuellement de préciser leur estimation. 
 
 Evidemment, la méthode présentée se base sur une heuristique simple, cependant, bien des raffinements sont possibles pour l'améliorer. Je laisse au lecteur ambitieux, le soin de reprendre le flambeau !
