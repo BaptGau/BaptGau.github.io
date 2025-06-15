@@ -6,4 +6,4 @@ title: Home
 Page où je partage des réflexions et des travaux !
 
 Les articles écrits:
-- [Peut-on battre Riemann ?](riemann_hypothesis.md)
+- [Peut-on battre Riemann ?](nombre_premiers.md)
