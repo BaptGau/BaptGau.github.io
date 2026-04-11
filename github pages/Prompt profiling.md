@@ -1,3 +1,7 @@
+---
+title: Prompt Profiling
+---
+
 **The Problem**
 
 Large Language Models have the powerful ability to handle a huge variety of topics. Summarisation, text extraction, coding, and problem-solving are only a small subset of what they can do.
