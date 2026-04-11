@@ -203,7 +203,7 @@ This programmatic approach allows for true, data-driven **prompt profiling**, le
 
  While this example focuses on structural validity and language matching, this framework can easily be expanded for any metrics, deterministic or AI based.
 
-I've implemented a short POC repo here: **[Link to Repo](https://github.com/BaptGau?tab=repositories)**. Note that this is still a POC. What would allow it to move to a proper feature would be, in my opinion:
+I've implemented a short POC repo [here](https://github.com/BaptGau/prompt-profiling). Note that this is still a POC. What would allow it to move to a proper feature would be, in my opinion:
 
 - Setting up a parser, to convert any prompt in an abstract syntax tree (as it can be a bit tricky to write manually)
 - Having something that works and aggregates metrics on a dataset level (current only work on one sample).
