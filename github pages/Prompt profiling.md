@@ -172,7 +172,7 @@ To answer this, we can perform an **ablation study** on all the nodes of our pro
 
 We can compute the value of any specific line of text by measuring the performance of the full prompt, and then subtracting the performance of the prompt _without_ that specific node:
 
-$Contribution = Metric_{baseline} - Metric_{ablated\_node}$
+$Contribution = Metric_{baseline} - Metric_{AblatedNode}$
 
 Let's look at the actual terminal output of such a test:
 
