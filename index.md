@@ -3,7 +3,8 @@ title: Home
 ---
 
 # Hello
-Page où je partage des réflexions et des travaux !
+A page where I share thoughts and work!
 
-Les articles écrits:
-- [Peut-on battre Riemann ?](nombres_premiers.md)
+Articles:
+- [Can We Beat Riemann?](nombres_premiers.md) _(in French)_
+- [Prompt Profiling](github%20pages/Prompt%20profiling.md)
