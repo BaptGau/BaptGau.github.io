@@ -1,3 +1,8 @@
+---
+layout: default
+title: AI Engineering
+---
+
 # TL;DR
 Production AI engineering is an architecture-design problem. This article presents a framework for decomposing a product feature ($F$) into operational tasks:
 $$F \longrightarrow T={t_1,\ldots,t_n},$$
@@ -28,123 +33,8 @@ These properties create a deceptively simple design choice. An engineer can ask 
 
 # Table of Contents
 
-- [[#TL;DR|TL;DR]]
-    
-- [[#Introduction|Introduction]]
-    
-- [[#1. From Features to Operational Tasks|1. From Features to Operational Tasks]]
-    
-- [[#2. Estimators as Execution Components|2. Estimators as Execution Components]]
-    
-    - [[#2.1. Estimator Configuration|2.1. Estimator Configuration]]
-        
-    - [[#2.2. Estimator Types|2.2. Estimator Types]]
-        
-    - [[#2.3. Task-Level Estimator Success|2.3. Task-Level Estimator Success]]
-        
-    - [[#2.4. Estimators Executing Multiple Tasks|2.4. Estimators Executing Multiple Tasks]]
-        
-- [[#3. Architectures as Compositions of Estimators|3. Architectures as Compositions of Estimators]]
-    
-    - [[#3.1. Partitioning Tasks into Estimator Groups|3.1. Partitioning Tasks into Estimator Groups]]
-        
-    - [[#3.2. Assigning Estimators to Task Groups|3.2. Assigning Estimators to Task Groups]]
-        
-    - [[#3.3. Execution Order and Dependencies|3.3. Execution Order and Dependencies]]
-        
-    - [[#3.4. Validators|3.4. Validators]]
-        
-    - [[#3.5. Retry and Repair Policies|3.5. Retry and Repair Policies]]
-        
-    - [[#3.6. Fallback and Escalation Policies|3.6. Fallback and Escalation Policies]]
-        
-    - [[#3.7. Architectural Patterns|3.7. Architectural Patterns]]
-        
-    - [[#3.8. From Architecture to Reliability|3.8. From Architecture to Reliability]]
-        
-- [[#4. Reliability: From Estimator Attempts to System Success|4. Reliability: From Estimator Attempts to System Success]]
-    
-    - [[#4.1. Estimator-Attempt Success|4.1. Estimator-Attempt Success]]
-        
-    - [[#4.2. Task-Level Architectural Success|4.2. Task-Level Architectural Success]]
-        
-    - [[#4.3. Task-Group Success|4.3. Task-Group Success]]
-        
-    - [[#4.4. Feature-Level Success|4.4. Feature-Level Success]]
-        
-    - [[#4.5. Service-Level Success|4.5. Service-Level Success]]
-        
-- [[#5. Reliability Effects of Task Coupling|5. Reliability Effects of Task Coupling]]
-    
-    - [[#5.1. Constraint Restrictiveness|5.1. Constraint Restrictiveness]]
-        
-    - [[#5.2. Constraint Sensitivity and Interaction|5.2. Constraint Sensitivity and Interaction]]
-        
-    - [[#5.3. Task Dependence, Interference, and Positive Transfer|5.3. Task Dependence, Interference, and Positive Transfer]]
-        
-- [[#6. Total Expected Cost: Direct Execution and Failure Loss|6. Total Expected Cost: Direct Execution and Failure Loss]]
-    
-    - [[#6.1. The Runtime Execution Trace|6.1. The Runtime Execution Trace]]
-        
-    - [[#6.2. Direct API Cost|6.2. Direct API Cost]]
-        
-    - [[#6.3. Direct Self-Hosted Cost|6.3. Direct Self-Hosted Cost]]
-        
-    - [[#6.4. Latency as an Architectural Quantity|6.4. Latency as an Architectural Quantity]]
-        
-    - [[#6.5. Direct-Cost Effects of Task Grouping|6.5. Direct-Cost Effects of Task Grouping]]
-        
-    - [[#6.6. Failure Loss|6.6. Failure Loss]]
-        
-    - [[#6.7. Total Expected Architecture Cost|6.7. Total Expected Architecture Cost]]
-        
-    - [[#6.8. A Simplified Failure-Probability Approximation|6.8. A Simplified Failure-Probability Approximation]]
-        
-    - [[#6.9. Comparing Grouped and Modular Architectures|6.9. Comparing Grouped and Modular Architectures]]
-        
-    - [[#6.10. The Cost of Partial Failure and Recovery Scope|6.10. The Cost of Partial Failure and Recovery Scope]]
-        
-- [[#7. Optimizing Estimators and Architectures|7. Optimizing Estimators and Architectures]]
-    
-    - [[#7.1. Two Levels of Optimization|7.1. Two Levels of Optimization]]
-        
-    - [[#7.2. The Golden Estimator Is Conditional|7.2. The Golden Estimator Is Conditional]]
-        
-    - [[#7.3. Estimator-Level Optimization Levers|7.3. Estimator-Level Optimization Levers]]
-        
-    - [[#7.4. Architecture-Level Optimization Levers|7.4. Architecture-Level Optimization Levers]]
-        
-    - [[#7.5. Estimating the Optimization Objective|7.5. Estimating the Optimization Objective]]
-        
-    - [[#7.6. When Costs Cannot Be Reduced to Money|7.6. When Costs Cannot Be Reduced to Money]]
-        
-    - [[#7.7. A Safe Experimental Progression|7.7. A Safe Experimental Progression]]
-        
-- [[#8. Recommended Optimization Flow|8. Recommended Optimization Flow]]
-    
-    - [[#8.1. Define the Feature Contract|8.1. Define the Feature Contract]]
-        
-    - [[#8.2. Establish a Capable Baseline|8.2. Establish a Capable Baseline]]
-        
-    - [[#8.3. Instrument the Complete Execution Trace|8.3. Instrument the Complete Execution Trace]]
-        
-    - [[#8.4. Collect Representative Data|8.4. Collect Representative Data]]
-        
-    - [[#8.5. Identify the Dominant Cost Drivers|8.5. Identify the Dominant Cost Drivers]]
-        
-    - [[#8.6. Optimize Low-Risk Components|8.6. Optimize Low-Risk Components]]
-        
-    - [[#8.7. Optimize Estimator Assignment and Routing|8.7. Optimize Estimator Assignment and Routing]]
-        
-    - [[#8.8. Revisit the Architecture|8.8. Revisit the Architecture]]
-        
-    - [[#8.9. Adapt or Distill Models When Justified|8.9. Adapt or Distill Models When Justified]]
-        
-    - [[#8.10. Continuous Reoptimization|8.10. Continuous Reoptimization]]
-        
-    - [[#8.11. From Golden Estimators to a Golden Architecture|8.11. From Golden Estimators to a Golden Architecture]]
-        
-- [[#Conclusion|Conclusion]]
+* TOC
+{:toc}
 
 # 1. From Features to Operational Tasks 
 
